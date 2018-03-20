@@ -1,0 +1,1 @@
+jQuery('.parallax-image').imageScroll({holderClass: 'parallax-image-wrapper',imgClass: 'parallaxed-image',touch:jQuery(window).width()<769});
