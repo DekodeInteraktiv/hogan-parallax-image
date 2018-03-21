@@ -22,11 +22,14 @@ if ( empty( $this->image ) ) {
 	return;
 }
 printf(
-	'<figure class="%s" data-image="%s" data-width="%s" data-height="%s" data-cover-ratio="%s"></figure>',
-	esc_attr( hogan_classnames(
-		apply_filters( 'hogan/module/parallax_image/figure_classes', [ 'wp-caption', 'size-full' ], $this )
-	) ),
+	'<figure class="%s" data-image="%s" data-image-mobile="%s" data-width="%s" data-height="%s" data-cover-ratio="%s"></figure>',
+	esc_attr(
+		hogan_classnames(
+			apply_filters( 'hogan/module/parallax_image/figure_classes', [ 'wp-caption' ], $this )
+		)
+	),
 	esc_attr( $this->image['url'] ),
+	esc_attr( $this->image['mobile_url'] ),
 	esc_attr( $this->image['width'] ),
 	esc_attr( $this->image['height'] ),
 	esc_attr( $this->options['cover_ratio'] )

@@ -1,1 +1,1 @@
-jQuery('.hogan-module-parallax_image figure').imageScroll({holderClass: 'parallax-image-wrapper',imgClass: 'parallax-image',touch:jQuery(window).width()<769});
+var parallax_enabled = jQuery(window).width()>768;jQuery('.hogan-module-parallax_image figure').imageScroll({holderClass: 'parallax-image-wrapper',imgClass: 'parallax-image',imageAttribute:(parallax_enabled===true)?'image':'image-mobile',touch:jQuery(window).width()<769});
