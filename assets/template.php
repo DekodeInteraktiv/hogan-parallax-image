@@ -23,12 +23,9 @@ if ( empty( $this->image ) ) {
 }
 printf(
 	'<figure class="%s" data-image="%s" data-width="%s" data-height="%s" data-cover-ratio="%s"></figure>',
-	esc_attr(
-		hogan_classnames(
-			[ 'parallax-image' ],
-			apply_filters( 'hogan/module/parallax_image/figure_classes', [], $this )
-		)
-	),
+	esc_attr( hogan_classnames(
+		apply_filters( 'hogan/module/parallax_image/figure_classes', [ 'wp-caption', 'size-full' ], $this )
+	) ),
 	esc_attr( $this->image['url'] ),
 	esc_attr( $this->image['width'] ),
 	esc_attr( $this->image['height'] ),

@@ -1,1 +1,1 @@
-jQuery('.parallax-image').imageScroll({holderClass: 'parallax-image-wrapper',imgClass: 'parallaxed-image',touch:jQuery(window).width()<769});
+jQuery('.hogan-module-parallax_image figure').imageScroll({holderClass: 'parallax-image-wrapper',imgClass: 'parallax-image',touch:jQuery(window).width()<769});
