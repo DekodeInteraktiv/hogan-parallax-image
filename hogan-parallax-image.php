@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/dekodeinteraktiv/hogan-parallax-image
  * GitHub Plugin URI: https://github.com/dekodeinteraktiv/hogan-parallax-image
  * Description: Parallax Image Module for Hogan.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Dekode
  * Author URI: https://dekode.no
  * License: GPL-3.0-or-later
@@ -39,8 +39,7 @@ function hogan_load_textdomain() {
 /**
  * Register module in Hogan
  */
-function hogan_register_module() {
-	// Include image and register module class.
+function hogan_register_module( \Dekode\Hogan\Core $core ) {
 	require_once 'class-parallax-image.php';
-	\hogan_register_module( new \Dekode\Hogan\Parallax_Image() );
+	$core->register_module( new \Dekode\Hogan\Parallax_Image() );
 }
