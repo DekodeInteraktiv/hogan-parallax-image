@@ -32,9 +32,6 @@
     "test" : [
       "@composer install",
       "./vendor/bin/phpcs"
-    ],
-    "lint": [
-      "./vendor/bin/phpcs"
     ]
   }
 }
