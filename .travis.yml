@@ -19,6 +19,10 @@ matrix:
       php: 7.0
       env: WP_TRAVISCI=phpcs
 
+    - language: node_js
+      node_js: 8
+      env: WP_TRAVISCI=node
+
 before_script:
   - if [[ "$WP_TRAVISCI" == "phpcs" ]]; then export PATH="$HOME/.composer/vendor/bin:$PATH"; fi
   - |
@@ -31,17 +35,18 @@ before_script:
     fi
   - |
     if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
-      composer global require wp-coding-standards/wpcs
-      composer global require wimg/php-compatibility
-      phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs,$HOME/.composer/vendor/wimg/php-compatibility
+      composer install
     fi
+  - if [[ "$WP_TRAVISCI" == "node" ]]; then yarn install; fi
 
 script:
   - |
     if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
-      find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
-      phpcs -p -s -v . --standard=./phpcs.xml --extensions=php --runtime-set testVersion $TRAVIS_PHP_VERSION
+      find . -name '*.php' ! -path "./vendor/*" ! -path "./wp-content/*" -print0 | xargs -0 -n 1 -P 4 php -l
+      echo Running phpcs for PHP version $TRAVIS_PHP_VERSION …
+      ./vendor/bin/phpcs --runtime-set testVersion $TRAVIS_PHP_VERSION
     fi
+  - if [[ "$WP_TRAVISCI" == "node" ]]; then yarn lint; fi
 
 notifications:
   email: false
