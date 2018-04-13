@@ -4,8 +4,5 @@
 	<file>.</file>
 	<arg name="extensions" value="php" />
 	<config name="text_domain" value="hogan-parallax-image" />
-	<rule ref="Dekode">
-		<exclude name="NeutronStandard.Functions.TypeHint.NoArgumentType" />
-		<exclude name="NeutronStandard.Functions.TypeHint.NoReturnType" />
-	</rule>
+	<rule ref="Dekode" />
 </ruleset>
