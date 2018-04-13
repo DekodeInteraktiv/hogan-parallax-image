@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/dekodeinteraktiv/hogan-parallax-image
  * GitHub Plugin URI: https://github.com/dekodeinteraktiv/hogan-parallax-image
  * Description: Parallax Image Module for Hogan.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Dekode
  * Author URI: https://dekode.no
  * License: GPL-3.0-or-later
@@ -18,13 +18,14 @@
  */
 
 declare( strict_types = 1 );
+
 namespace Dekode\Hogan\Parallax_Image;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'HOGAN_PARALLAX_IMAGE_VERSION', '1.0.2' );
+define( 'HOGAN_PARALLAX_IMAGE_VERSION', '1.0.4' );
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\\hogan_load_textdomain' );
 add_action( 'hogan/include_modules', __NAMESPACE__ . '\\hogan_register_module' );

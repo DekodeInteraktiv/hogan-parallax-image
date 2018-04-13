@@ -129,7 +129,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Parallax_Image' ) && class_exists( '\\Dek
 		public function load_args_from_layout_content( array $raw_content, int $counter = 0 ) {
 			$image = wp_get_attachment_image_src( $raw_content['image_id'], apply_filters( 'hogan/module/parallax_image/image_size', 'full' ) );
 			if ( ! empty( $image ) ) {
-				$keys                      = array( 'url', 'width', 'height', 'is_intermediate' );
+				$keys                      = [ 'url', 'width', 'height', 'is_intermediate' ];
 				$this->image               = array_combine( $keys, array_values( $image ) );
 				$mobile_image              = wp_get_attachment_image_src( $raw_content['image_id'], apply_filters( 'hogan/module/parallax_image/mobile_image_size', 'large' ) );
 				$this->image['mobile_url'] = ! empty( $mobile_image ) ? $mobile_image[0] : $this->image['url'];
