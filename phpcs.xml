@@ -3,7 +3,7 @@
 	<description>Write code using Hogan's standards and Hogan will stay happy!</description>
 	<file>.</file>
 	<arg name="extensions" value="php" />
-	<config name="text_domain" value="hogan-content-grid" />
+	<config name="text_domain" value="hogan-parallax-image" />
 	<rule ref="Dekode">
 		<exclude name="NeutronStandard.Functions.TypeHint.NoArgumentType" />
 		<exclude name="NeutronStandard.Functions.TypeHint.NoReturnType" />
